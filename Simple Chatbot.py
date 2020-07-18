@@ -87,6 +87,7 @@ def getTime():
     meridiem = ""
     if now.hour < 12:
         meridiem = "a.m"
+        currentHour = str(now.hour)
     else:
         meridiem = "p.m"
         currentHour = str(now.hour - 12)
@@ -173,6 +174,8 @@ def enterPressed(event=None):
     compText = ""
     
     userText = userText.lower()
+    
+    #Conditons for computer responses depending on user request
     if userText in wakeUpWordsList:
         compText = makeGreeting()
         send(compText, False)
