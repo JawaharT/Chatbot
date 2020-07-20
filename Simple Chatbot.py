@@ -90,7 +90,10 @@ def getTime():
         currentHour = str(now.hour)
     else:
         meridiem = "p.m"
-        currentHour = str(now.hour - 12)
+        if now.hour > 12:
+            currentHour = str(now.hour - 12)
+        else:
+            currentHour = str(now.hour)
 
     if now.minute > 10:
         currentMinute = str(now.minute)
